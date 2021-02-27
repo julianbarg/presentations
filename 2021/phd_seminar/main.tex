@@ -1,0 +1,36 @@
+\documentclass{beamer}
+
+\usepackage{hyperref}
+
+\graphicspath{ {../../illustrations/} }
+\setbeamertemplate{footline}[frame number]
+
+\definecolor{ivey-green}{HTML}{034638}
+\definecolor{ivey-purple}{HTML}{582C83}
+
+\title{Learning to be sustainable (?)}
+\author{\texorpdfstring{Julian Barg\newline\url{julian@jbarg.net}}{Author}
+	}
+\institute{Ivey Business School}
+\date{2021-03-02}
+% Make sure the title page looks Ivey-like
+\setbeamercolor{author}{fg=white} 
+\setbeamercolor{title}{fg=white} 
+\setbeamercolor{date}{fg=white} 
+\setbeamercolor{institute}{fg=white} 
+
+\logo{\includegraphics[height=1.5cm]{ivey.jpg}}
+
+\begin{document}
+
+	% Title page
+	{\setbeamercolor{background canvas}{bg=ivey-purple}
+		\frame{\titlepage}  
+	}
+
+	\begin{frame}
+	\frametitle{Sample frame title}
+	This is a text in the first frame. This is a text in the first frame. This is a text in the first frame.
+	\end{frame}
+
+\end{document}
