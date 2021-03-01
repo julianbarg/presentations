@@ -1,13 +1,33 @@
 \documentclass{beamer}
 
+% Packages
+% For some reason, this package is needed in order to be able to show notes on the second screen (see /setbeameroption below).
+\usepackage[natbib=true,style=apa,sortcites=nyt]{biblatex}
+\usepackage{pgfpages}
 \usepackage{hyperref}
 
+% Beamer presentation setup
 \graphicspath{ {../../illustrations/} }
 \setbeamertemplate{footline}[frame number]
+\setbeameroption{show notes on second screen}
+% Subitem does not work in latex, so we define it manually
+\newcommand{\subitem}{\par\qquad}
+\newcommand{\emptyline}{\vspace{\baselineskip}}
 
+% Styling
+% ToDo: Switch to transparent logo?
+\logo{\includegraphics[height=1.5cm]{ivey.jpg}}
 \definecolor{ivey-green}{HTML}{034638}
 \definecolor{ivey-purple}{HTML}{582C83}
+\newcommand{\blackgroup}{
+	\bgroup
+	\setbeamercolor{background canvas}{bg=black}
+	\setbeamercolor{normal text}{fg=white}
+	% Somehow, this finally gets my freaking text to be white 
+	\usebeamercolor[fg]{normal text}
+}
 
+% Title page info
 \title{Learning to be sustainable (?)}
 \author{\texorpdfstring{Julian Barg\newline\url{julian@jbarg.net}}{Author}
 	}
@@ -19,18 +39,25 @@
 \setbeamercolor{date}{fg=white} 
 \setbeamercolor{institute}{fg=white} 
 
-\logo{\includegraphics[height=1.5cm]{ivey.jpg}}
+\addbibresource{bibliography.bib}
 
 \begin{document}
+	% Disable hyperrefs to prevent warnings related to notes and hyperref combo
+	\NoHyper
 
-	% Title page
-	{\setbeamercolor{background canvas}{bg=ivey-purple}
-		\frame{\titlepage}  
-	}
+	\input{sections/frontend}
 
-	\begin{frame}
-	\frametitle{Sample frame title}
-	This is a text in the first frame. This is a text in the first frame. This is a text in the first frame.
+	\input{sections/introduction}
+
+	\input{sections/learning}
+
+	\input{sections/application}
+
+	\input{sections/solutions}
+
+	\begin{frame}[allowframebreaks, plain]
+		\frametitle{References}
+		\printbibliography
 	\end{frame}
 
 \end{document}
