@@ -1,4 +1,4 @@
-\documentclass{beamer}
+\documentclass[notes=none]{beamer}
 
 % Packages
 % For some reason, this package is needed in order to be able to show notes on the second screen (see /setbeameroption below).
@@ -13,6 +13,7 @@
 % Subitem does not work in latex, so we define it manually
 \newcommand{\subitem}{\par\qquad}
 \newcommand{\emptyline}{\vspace{\baselineskip}}
+% \setbeameroption{hide notes}
 
 % Styling
 % ToDo: Switch to transparent logo?
@@ -42,20 +43,20 @@
 \addbibresource{bibliography.bib}
 
 \begin{document}
-	% Disable hyperrefs to prevent warnings related to notes and hyperref combo
-	\NoHyper
+	% Disable hyperrefs to prevent warnings related to notes and hyperrzef combo
+	% \NoHyper
 
 	\input{sections/frontend}
 
-	\input{sections/introduction}
-
 	\input{sections/learning}
 
-	\input{sections/application}
-
-	\input{sections/solutions}
+	\input{sections/sustainability}
 
 	\input{sections/empirics}
+
+	\begin{frame}
+		\huge Thanks!
+	\end{frame}
 
 	\begin{frame}[allowframebreaks, plain]
 		\frametitle{References}
